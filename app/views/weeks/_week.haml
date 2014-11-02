@@ -1,0 +1,4 @@
+%td
+  = render partial: 'orderers', locals: {orderers_count: week.orderers_count, users_count: week.cohort.users_count, label: 'orderers'}
+  %br
+  = render partial: 'orderers', locals: {orderers_count: week.first_time_orderers_count, users_count: week.cohort.users_count, label: 'first time'}

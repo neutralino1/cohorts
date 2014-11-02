@@ -1,0 +1,18 @@
+
+#input-box
+  = form_for root_path, method: :get, html: {class: 'form-inline'} do |f|
+    = number_field_tag :nweeks, params[:nweeks], placeholder: 'Number of weeks', class: 'form-control'
+    = submit_tag 'Show', class: 'btn btn-primary'
+
+  = link_to 'Reset', root_path
+  &middot;
+  = link_to 'View all', root_path(all: 1)
+
+%table.table.table-striped
+  %tr
+    %th Cohort
+    %th Users
+    - @nweeks.times do |index|
+      %th= "#{index * 7}-#{index * 7 + 7} days"
+  = render @cohorts
+

@@ -1,0 +1,6 @@
+%tr
+  %td= cohort_time_range(cohort)
+  %td= cohort.users_count
+  = render cohort.weeks
+  - (@nweeks - cohort.weeks.size).times do
+    %td
