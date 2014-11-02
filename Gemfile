@@ -17,3 +17,7 @@ gem 'twitter-bootstrap-rails'
 group :test do
   gem 'factory_girl'
 end
+
+group :production do
+  gem 'rails_12factor'
+end
