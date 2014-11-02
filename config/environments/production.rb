@@ -53,7 +53,7 @@ Rails.application.configure do
   # Use a different cache store in production.
   uri = URI.parse(ENV["REDISTOGO_URL"])
   config.cache_store = :redis_store, {
-    host: uri.host, port: uri.port, password: uri.password, db: 1, namespace: 'cohorts', expires_in: 1.week
+    host: uri.host, port: uri.port, password: uri.password, db: 0, namespace: 'cohorts', expires_in: 1.week
   }
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
