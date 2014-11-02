@@ -19,5 +19,6 @@ module Cohorts
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
     config.autoload_paths << File.join(Rails.root, "app", "lib")
+    config.time_zone = "Pacific Time (US & Canada)"
   end
 end

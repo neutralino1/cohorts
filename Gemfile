@@ -13,3 +13,7 @@ gem 'haml'
 gem 'redis-rails'
 
 gem 'twitter-bootstrap-rails'
+
+group :test do
+  gem 'factory_girl'
+end
