@@ -9,7 +9,7 @@ class Week < Struct.new(:cohort, :year, :week)
 
   def orderers_count
     @orderers_count ||= Rails.cache.fetch("#{cache_key}:orderers_count", force: is_current_week?) do
-      orderers.count
+      orderers.distinct.count('users.id', distinct: true)
     end
   end
 
@@ -19,7 +19,7 @@ class Week < Struct.new(:cohort, :year, :week)
 
   def first_time_orderers_count
     @first_time_orderers_count ||= Rails.cache.fetch("#{cache_key}:first_time_orderers_count", force: is_current_week?) do
-      first_time_orderers.count
+      first_time_orderers.distinct.count('users.id', distinct: true)
     end
   end
 
